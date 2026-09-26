@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+  --cor-destaque: #c3a198;
+  --cor-bronze: #b08a62;
+  --cor-bronze-escuro: #8f6b4a;
+  --cor-texto: #f1ece7;
+  --cor-fundo: #0b0b0b;
+}
+
+body {
+background: linear-gradient(135deg, var(--cor-fundo) 0%, #271e18 55%, #36251b 100%);
+}
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  display: flex;
+}
+
+.menu {
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+  
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor-bronze);
+}
+
+button {
+    color: var(--cor-fundo);
+    background-color: var(--cor-bronze);
+}
+
+
+
+h1 {
+ background: linear-gradient(90deg, #c3a198, #b08a62, #8f6b4a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
