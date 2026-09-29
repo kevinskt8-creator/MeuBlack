@@ -40,17 +40,18 @@ header {
   display: flex;
 }
 
-
 .menu {
   align-items: center;
   display: flex;
-  gap: 50px;
+  gap: 40px;
 }
 
 .menu a {
   text-decoration: none;
   color: var(--cor-texto);
   transition: 0.3s;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .menu a:hover {
@@ -60,12 +61,14 @@ header {
 button {
   border: none;
   border-radius: 8px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   color: var(--cor-fundo);
   background-color: var(--cor-bronze);
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
 }
 
 button:hover {
@@ -144,7 +147,7 @@ h1 {
 }
 
 .hero-card::before {
-  content:"";
+  content: "";
   position: absolute;
   width: 220px;
   height: 220px;
@@ -179,4 +182,59 @@ h1 {
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+}
+
+.btn-secundario {
+  border: 1px solid var(--cor-bronze);
+  background-color: transparent;
+  color: var(--cor-texto);
+}
+
+.btn-secundario:hover {
+  background-color: var(--cor-bronze);
+  color: var(--cor-fundo);
+  transform: translateY(-2px);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.recursos {
+  padding: 100px 60px;
+}
+
+.recursos-header {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.recursos-header > span {
+  color: var(--cor-bronze);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.recursos-header h2 {
+  color: var(--cor-texto);
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.recursos-header p {
+  color: #c9c1bb;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.recursos-card {
+  flex: 1;
+  padding: 30px;
+  border: 1px solid var(--cor-bronze-escuro);
+  border-radius: 16px;
+  background-color: rgba(11, 11, 11, 0.35);
 }
