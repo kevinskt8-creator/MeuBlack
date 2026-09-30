@@ -38,6 +38,8 @@ header {
   justify-content: space-between;
   padding: 20px 60px;
   display: flex;
+  position: relative;
+  z-index: 10;
 }
 
 .menu {
@@ -94,23 +96,26 @@ h1 {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   padding: 60px;
-  justify-content: space-between;
-  gap: 80px;
+  overflow: hidden;
 }
 
 .hero-text {
-  max-width: 700px;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  text-align: left
 }
 
 .hero h2 {
   color: var(--cor-texto);
   font-size: 56px;
-  line-height: 1.1;
-  margin-bottom: 25px;
+  line-height: 1.15;
+  margin-bottom: 20px;
 }
 
 .hero p {
@@ -132,58 +137,6 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.hero-card {
-  width: 380px;
-  height: 460px;
-  border: 1px solid var(--cor-bronze-escuro);
-  border-radius: 25px;
-  background: linear-gradient(145deg, #271e18, #0b0b0b);
-  display: flex;
-  align-items: flex-end;
-  padding: 35px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: rgba(176, 138, 98, 0.15);
-  filter: blur(45px);
-  top: -60px;
-  right: -60px;
-}
-
-.hero-card-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-card-content span {
-  color: var(--cor-bronze);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.hero-card-content h3 {
-  color: var(--cor-texto);
-  font-size: 38px;
-  line-height: 1.1;
-  margin: 15px 0;
-}
-
-.hero-card-content p {
-  color: #c9c1bb;
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 0;
-}
-
 .btn-secundario {
   border: 1px solid var(--cor-bronze);
   background-color: transparent;
@@ -199,6 +152,7 @@ h1 {
 .hero-buttons {
   display: flex;
   gap: 15px;
+  justify-content: flex-start;
 }
 
 .recursos {
@@ -231,10 +185,126 @@ h1 {
   max-width: 600px;
 }
 
-.recursos-card {
+.recursos-cards {
+  display: flex;
+  gap: 25px;
+}
+
+.recurso-card {
   flex: 1;
   padding: 30px;
   border: 1px solid var(--cor-bronze-escuro);
   border-radius: 16px;
   background-color: rgba(11, 11, 11, 0.35);
+}
+
+.destaques-cards {
+  display: flex;
+  gap: 25px;
+}
+
+.destaque-card {
+  flex: 1;
+  padding: 30px;
+  border: 1px solid var(--cor-bronze-escuro);
+  border-radius: 16px;
+  background-color: rgba(11, 11, 11, 0.35);
+}
+
+.hero-search {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+   position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  filter: brightness(0.75);
+}
+
+/* camada escura: forte na esquerda (onde fica o texto), some na direita */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--cor-fundo) 0%,
+    rgba(11, 11, 11, 0.85) 35%,
+    rgba(11, 11, 11, 0.25) 70%,
+    transparent 100%
+  );
+}
+
+.hero-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  padding: 6px 6px 6px 24px;
+  border: 1px solid var(--cor-bronze-escuro);
+  border-radius: 999px;
+  background-color: rgba(11, 11, 11, 0.5);
+  transition: 0.3s;
+}
+
+.hero-search:focus-within {
+  border-color: var(--cor-bronze);
+}
+
+.search-group {
+  flex: 1;
+}
+
+.search-group input {
+  width: 100%;
+  padding: 12px 8px;
+  border: none;
+  background: transparent;
+  color: var(--cor-texto);
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-group input::placeholder {
+  color: #c3a198;
+}
+
+.divisor {
+  width: 1px;
+  height: 28px;
+  margin: 0 12px;
+  background-color: var(--cor-bronze-escuro);
+}
+
+.btn-buscar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* esconde o label da tela, mas mantém para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
