@@ -1,4 +1,4 @@
-// 1. Os dados: uma lista (array) de objeto
+// 1. Os dados
 const profissionais = [
   {
     id: 1,
@@ -26,12 +26,12 @@ const profissionais = [
   },
 ];
 
-// 2. Uma função que recebe UM profissional e devolve o HTML do cartão
+// 2. Recebe UM profissional e devolve o HTML do cartão
 function criarCard(profissional) {
   const iniciais = profissional.nome
     .split(" ")
     .map((parte) => parte[0])
-    .splice(0, 2)
+    .slice(0, 2)
     .join("");
 
   const tags = profissional.especialidades
@@ -40,33 +40,40 @@ function criarCard(profissional) {
 
   return `
     <article class="pro-card">
-    <div class="pro-avatar">${iniciais}</div>
-    <h3>${profissional.nome}</h3>
-    <p class="pro-cidade">${profissional.cidade} <p/>
-    <div class="pro-tags">${tags}</div>
-    <a href="#" class="pro-botao">Ver perfil</a>
+      <div class="pro-avatar">${iniciais}</div>
+      <h3>${profissional.nome}</h3>
+      <p class="pro-cidade">${profissional.cidade}</p>
+      <div class="pro-tags">${tags}</div>
+      <a href="#" class="pro-botao">Ver perfil</a>
     </article>
-    `;
+  `;
 }
 
-// 3. Pegar a div vazia e preencher com os cartões
+// 3. Renderização
 const lista = document.getElementById("lista-profissionais");
 
-function renderizar(profissionaisParaMostar) {
-  lista.innerHTML = profissionaisParaMostar.map(criarCard).join("");
+function renderizar(profissionaisParaMostrar) {
+  lista.innerHTML = profissionaisParaMostrar.map(criarCard).join("");
 }
 
 renderizar(profissionais);
 
+// 4. Busca
+function normalizar(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 const inputServico = document.getElementById("servico");
 
 inputServico.addEventListener("input", (evento) => {
-  const termo = evento.target.value.toLowerCase();
+  const termo = normalizar(evento.target.value);
 
-  const filtrados = profissionais.filter.apply((profissional) =>
-    profissional.especialidades.some((esp) =>
-      esp.toLowerCase().includes(termo),
-    ),
+  const filtrados = profissionais.filter((profissional) =>
+    profissional.especialidades.some((esp) => normalizar(esp).includes(termo)),
   );
-  console.log(filtrados);
+
+  renderizar(filtrados);
 });
