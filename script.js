@@ -53,6 +53,10 @@ function criarCard(profissional) {
 const lista = document.getElementById("lista-profissionais");
 
 function renderizar(profissionaisParaMostrar) {
+  if (profissionaisParaMostrar.length === 0) {
+    lista.innerHTML = `<p class="sem-resultados">Nenhum profissional encontrado.</p>`;
+    return;
+  }
   lista.innerHTML = profissionaisParaMostrar.map(criarCard).join("");
 }
 
@@ -76,4 +80,17 @@ inputServico.addEventListener("input", (evento) => {
   );
 
   renderizar(filtrados);
+});
+
+const botaoBuscar = document.querySelector(".btn-buscar");
+const secaoProfissionais = document.getElementById("profissionais");
+
+function irParaResultados() {
+  secaoProfissionais.scroollIntoView({ behavior: "smooth" });
+}
+
+botaoBuscar.addEventListener("click", irParaResultados);
+
+inputServico.addEventListener("keydown", (evento) => {
+  if (evento.key === "Enter") irParaResultados();
 });

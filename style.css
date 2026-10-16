@@ -474,3 +474,8 @@ header {
 .pro-botao:hover {
   color: var(--cor-destaque);
 }
+
+.sem-resultado {
+  color: #c9c1bb;
+  font-size: 16px;
+}
