@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <button class="menu-btn" aria-label="Abrir menu">&#9776;</button>
+      <button class="menu-btn" id="menu-abrir" aria-label="Abrir menu">&#9776;</button>
 
       <a href="#inicio" class="logo">
         <h1>Meu Black</h1>
@@ -23,6 +23,19 @@
         <a href="#" class="botao">Cadastrar meu negócio</a>
       </nav>
     </header>
+
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <aside class="menu-lateral" id="menu-lateral" aria-hidden="true">
+      <button class="menu-fechar" id="menu-fechar" aria-label="Fechar menu">
+        &times;
+      </button>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#recursos">Como funciona</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </aside>
 
     <section class="hero" id="inicio">
       <div class="hero-text">
@@ -92,7 +105,7 @@
     <section class="recursos" id="recursos">
       <div class="recursos-header">
         <span>COMO FUNCIONA</span>
-        <h2>Encontre o profissional certo para você</h2>
+        <h2>Encontre o profissional <em>certo</em> para você</h2>
         <p>
           Encontre profissionais, conheça seus trabalhos e tenha mais facilidade
           para cuidar do seu estilo.
@@ -130,33 +143,46 @@
     <section class="destaque" id="especialidades">
       <div class="destaques-header">
         <span>ESPECIALIDADES</span>
-        <h2>Encontre pelo estilo que você procura</h2>
+       <h2>Encontre pelo <em>estilo</em> que você procura</h2>
         <p>
           Explore as especialidades e descubra profissionais que entendem do seu
           tipo de cabelo.
         </p>
       </div>
-
       <div class="destaques-cards">
-        <a href="#" class="destaque-card"><h3>Tranças</h3></a>
-        <a href="#" class="destaque-card"><h3>Cabelo crespo</h3></a>
-        <a href="#" class="destaque-card"><h3>Cacheados</h3></a>
-        <a href="#" class="destaque-card"><h3>Locs</h3></a>
-        <a href="#" class="destaque-card"><h3>Twists</h3></a>
-        <a href="#" class="destaque-card"><h3>Barbearia</h3></a>
-        <a href="#" class="destaque-card"><h3>Coloração</h3></a>
-        <a href="#" class="destaque-card"><h3>Transição capilar</h3></a>
+        <a href="profissionais.html?servico=trancas" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Tranças</h3>
+        </a>
+        <a href="profissionais.html?servico=crespo" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Cabelo crespo</h3>
+        </a>
+        <a href="profissionais.html?servico=cacheados" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Cacheados</h3>
+          </a>
+        <a href="profissionais.html?servico=locs" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Locs</h3>
+          </a>
+        <a href="profissionais.html?servico=twists" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Twists</h3>
+          </a>
+        <a href="profissionais.html?servico=barbearia" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Barbearia</h3>
+          </a>
+        <a href="profissionais.html?servico=coloracao" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Coloração</h3>
+          </a>
+        <a href="profissionais.html?servico=transicao" class="destaque-card">
+          <div class="arco"></div>
+          <h3>Transição capilar</h3>
+          </a>
       </div>
-    </section>
-
-    <section class="profissionais" id="profissionais">
-      <div class="profissionais-header">
-        <span>PROFISSIONAIS</span>
-        <h2>Profissionais perto de você</h2>
-        <p>Conheça especialistas e veja como entrar em contato.</p>
-      </div>
-
-      <div class="profissionais-lista" id="lista-profissionais"></div>
     </section>
 
     <script src="script.js"></script>

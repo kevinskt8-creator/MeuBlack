@@ -1,96 +1,26 @@
-// 1. Os dados
-const profissionais = [
-  {
-    id: 1,
-    nome: "Ana Souza",
-    cidade: "Asa Norte, Brasília",
-    especialidades: ["Tranças", "Twists"],
-  },
-  {
-    id: 2,
-    nome: "Marcos Lima",
-    cidade: "Taguatinga, DF",
-    especialidades: ["Barbearia", "Degradê"],
-  },
-  {
-    id: 3,
-    nome: "Joana Ribeiro",
-    cidade: "Ceilândia, DF",
-    especialidades: ["Cacheados", "Transição capilar"],
-  },
-  {
-    id: 4,
-    nome: "Paulo Mendes",
-    cidade: "Asa Sul, Brasília",
-    especialidades: ["Locs", "Coloração"],
-  },
-];
+const botaoAbrir = document.getElementById("menu-abrir");
+const botaoFechar = document.getElementById("menu-fechar");
+const menuLateral = document.getElementById("menu-lateral");
+const overlay = document.getElementById("menu-overlay");
 
-// 2. Recebe UM profissional e devolve o HTML do cartão
-function criarCard(profissional) {
-  const iniciais = profissional.nome
-    .split(" ")
-    .map((parte) => parte[0])
-    .slice(0, 2)
-    .join("");
-
-  const tags = profissional.especialidades
-    .map((esp) => `<span class="tag">${esp}</span>`)
-    .join("");
-
-  return `
-    <article class="pro-card">
-      <div class="pro-avatar">${iniciais}</div>
-      <h3>${profissional.nome}</h3>
-      <p class="pro-cidade">${profissional.cidade}</p>
-      <div class="pro-tags">${tags}</div>
-      <a href="#" class="pro-botao">Ver perfil</a>
-    </article>
-  `;
+function abrirMenu() {
+  menuLateral.classList.add("aberto");
+  overlay.classList.add("aberto");
+  menuLateral.setAttribute("aria-hidden", "false");
 }
 
-// 3. Renderização
-const lista = document.getElementById("lista-profissionais");
-
-function renderizar(profissionaisParaMostrar) {
-  if (profissionaisParaMostrar.length === 0) {
-    lista.innerHTML = `<p class="sem-resultados">Nenhum profissional encontrado.</p>`;
-    return;
-  }
-  lista.innerHTML = profissionaisParaMostrar.map(criarCard).join("");
+function fecharMenu() {
+  menuLateral.classList.remove("aberto");
+  overlay.classList.remove("aberto");
+  menuLateral.setAttribute("aria-hidden", "true");
 }
 
-renderizar(profissionais);
+botaoAbrir.addEventListener("click", abrirMenu);
+botaoFechar.addEventListener("click", fecharMenu);
+overlay.addEventListener("click", fecharMenu);
 
-// 4. Busca
-function normalizar(texto) {
-  return texto
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
+// fecha ao clicar em um link do menu
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") fecharMenu();
+})
 
-const inputServico = document.getElementById("servico");
-
-inputServico.addEventListener("input", (evento) => {
-  const termo = normalizar(evento.target.value);
-
-  const filtrados = profissionais.filter((profissional) =>
-    profissional.especialidades.some((esp) => normalizar(esp).includes(termo)),
-  );
-
-  renderizar(filtrados);
-});
-
-const botaoBuscar = document.querySelector(".btn-buscar");
-const secaoProfissionais = document.getElementById("profissionais");
-
-function irParaResultados() {
-  secaoProfissionais.scroollIntoView({ behavior: "smooth" });
-}
-
-botaoBuscar.addEventListener("click", irParaResultados);
-
-inputServico.addEventListener("keydown", (evento) => {
-  if (evento.key === "Enter") irParaResultados();
-});
