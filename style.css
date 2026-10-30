@@ -24,7 +24,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   min-height: 100vh;
   background: linear-gradient(
@@ -332,26 +331,33 @@ header {
   background: var(--cor-bronze);
 }
 
-
-.recursos-header h2 em,
-.destaques-header h2 em,
-.profissionais-header h2 em {
-  color: var(--cor-bronze);
+.recursos-header h2 ,
+.destaques-header h2 ,
+.profissionais-header h2 {
+  color: var(--cor-texto);
   font-size: 42px;
   font-style: italic;
   line-height: 1.2;
-  font-weight: 400;
   margin: 15px 0;
 }
 
 .recursos-header p,
-.destaques-header p,
-.profissionais-header p {
+.destaques-header p {
   color: #c9c1bb;
   font-size: 17px;
   line-height: 1.6;
   max-width: 600px;
 }
+
+.recursos-header h2 em,
+.destaques-header h2 em,
+.profissionais-header h2 em {
+  color: var(--cor-bronze);
+  font-style: italic;
+  font-weight: 400;
+}
+
+
 
 /* ========================================
    COMO FUNCIONA
@@ -361,7 +367,7 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border-top: 1px solid rgba(176, 138, 98, 0.35);
+  border-top: 1px solid rgba(239, 237, 236, 0.35);
 }
 
 .recurso-card {
@@ -424,7 +430,7 @@ header {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border:  1px solid var(--cor-bronze-escuro);
+  border: 1px solid var(--cor-bronze-escuro);
   background-color: #2a1f18;
   background-image: linear-gradient(160deg, #4a3527, #1a130e);
   background-size: cover;
@@ -434,9 +440,9 @@ header {
 
 /* escurece a parte de baixo para o texto ficar legível sobre qualquer foto */
 .destaque-card:hover .arco {
- border-color: var(--cor-bronze);
- transform: translateY(-8px);
- box-shadow:
+  border-color: var(--cor-bronze);
+  transform: translateY(-8px);
+  box-shadow:
     0 0 0 6px #14100d,
     0 0 0 7px var(--cor-bronze),
     0 20px 40px rgba(0, 0, 0, 0.4);
@@ -453,8 +459,6 @@ header {
 .destaque-card:hover h3 {
   color: var(--cor-bronze);
 }
-
-
 
 /* ========================================
    PROFISSIONAIS
@@ -549,7 +553,7 @@ header {
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: rgba(0 , 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
@@ -584,7 +588,6 @@ header {
   border-bottom: 1px solid rgba(176, 138, 98, 0.2);
   transition: 0.3s;
 }
-
 
 .menu-lateral nav a:hover {
   color: var(--cor-bronze);
