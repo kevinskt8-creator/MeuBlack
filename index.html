@@ -12,14 +12,15 @@
   </head>
   <body>
     <header>
-      <button class="menu-btn" id="menu-abrir" aria-label="Abrir menu">&#9776;</button>
+      <button class="menu-btn" id="menu-abrir" aria-label="Abrir menu">
+        &#9776;
+      </button>
 
       <a href="#inicio" class="logo">
         <h1>Meu Black</h1>
       </a>
 
       <nav class="acoes">
-        <a href="#entrar">Entrar</a>
         <a href="#" class="botao">Cadastrar meu negócio</a>
       </nav>
     </header>
@@ -40,8 +41,8 @@
     <section class="hero" id="inicio">
       <div class="hero-text">
         <h2>
-          Encontre profissionais que
-          <span>entendem do seu cabelo.</span>
+          Encontre quem
+          <span>entende do seu cabelo.</span>
         </h2>
         <div class="hero-search">
           <div class="search-group">
@@ -78,14 +79,6 @@
             </svg>
           </button>
         </div>
-
-        <div class="hero-buttons">
-          <button type="button">Explorar especialistas</button>
-
-          <button type="button" class="btn-secundario">
-            Conhecer a plataforma
-          </button>
-        </div>
       </div>
 
       <div class="hero-image">
@@ -94,42 +87,98 @@
           alt="Profissional especializado em cabelos crespos"
         />
       </div>
-    </section>
 
-    <section class="recursos" id="recursos">
-      <div class="recursos-header">
-        <span>COMO FUNCIONA</span>
-        <h2>Encontre o profissional <em>certo</em> para você</h2>
-        <p>
-          Encontre profissionais, conheça seus trabalhos e tenha mais facilidade
-          para cuidar do seu estilo.
-        </p>
+      <div class="hero-scroll">
+        <a
+          href="#recursos"
+          class="hero-scroll-btn"
+          aria-label="Rolar para Como funciona"
+        >
+          <span>Como funciona</span>
+          <div class="scroll-linha"></div>
+        </a>
       </div>
+    </section>
+    <section class="recursos" id="recursos">
+      <div class="recursos-container">
+        <!-- Coluna da Foto Editorial -->
+        <div class="recursos-imagem-col">
+          <div class="recursos-moldura">
+            <img
+              src="img/pexels-wale-adebisi-321166840-30081801.jpg"
+              alt="Modelo celebrando a beleza e força do cabelo afro"
+            />
+            <div class="recursos-badge">
+              <span class="badge-icone">&#10022;</span>
+              <div>
+                <strong>Cuidado & Identidade</strong>
+                <p>Especialistas que valorizam a sua coroa</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="recursos-cards">
-        <div class="recurso-card">
-          <span>01</span>
-          <h3>Explore</h3>
-          <p>
-            Descubra profissionais especializados em cabelos crespos, cacheados
-            e estilo afro
-          </p>
-        </div>
-        <div class="recurso-card">
-          <span>02</span>
-          <h3>Conheça o trabalho</h3>
-          <p>
-            Veja informações, especialidades ee trabalhos para conhecer melhor
-            cada profissional.
-          </p>
-        </div>
-        <div class="recurso-card">
-          <span>03</span>
-          <h3>Agende seu atendimento</h3>
-          <p>
-            Entre em contato com o estabelecimento e encontre uma forma prática
-            de marcar seu atendimento.
-          </p>
+        <!-- Coluna dos Passos (Linha do Tempo) -->
+        <div class="recursos-conteudo-col">
+          <div class="recursos-header">
+            <span>COMO FUNCIONA</span>
+            <h2>O profissional <em>certo</em> para celebrar sua coroa</h2>
+            <p>
+              Cuidar do seu cabelo é um ato de identidade e orgulho. Criamos um
+              espaço para conectar você a especialistas que dominam com maestria
+              a textura e a essência do seu fio.
+            </p>
+          </div>
+
+          <div class="recursos-timeline">
+            <!-- Passo 01 -->
+            <div class="timeline-item">
+              <div class="timeline-marcador">
+                <span>01</span>
+                <div class="timeline-trilha"></div>
+              </div>
+              <div class="timeline-texto">
+                <h3>Explore a excelência afro</h3>
+                <p>
+                  Descubra trancistas, barbeiros e cabeleireiros especializados
+                  em crespos, cacheados, locs e transição capilar perto de você.
+                </p>
+                <a href="#especialidades" class="recurso-link">
+                  Ver especialidades <span>&darr;</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Passo 02 -->
+            <div class="timeline-item">
+              <div class="timeline-marcador">
+                <span>02</span>
+                <div class="timeline-trilha"></div>
+              </div>
+              <div class="timeline-texto">
+                <h3>Portfólios reais e confiança</h3>
+                <p>
+                  Veja fotos detalhadas de trabalhos reais, conheça as técnicas
+                  de cada artista capilar e sinta a segurança de estar em boas
+                  mãos.
+                </p>
+              </div>
+            </div>
+
+            <!-- Passo 03 -->
+            <div class="timeline-item">
+              <div class="timeline-marcador">
+                <span>03</span>
+              </div>
+              <div class="timeline-texto">
+                <h3>Conexão e agendamento direto</h3>
+                <p>
+                  Entre em contato com o profissional ou espaço afro escolhido
+                  com total praticidade, respeito e acolhimento.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -137,7 +186,7 @@
     <section class="destaque" id="especialidades">
       <div class="destaques-header">
         <span>ESPECIALIDADES</span>
-       <h2>Encontre pelo <em>estilo</em> que você procura</h2>
+        <h2>Encontre pelo <em>estilo</em> que você procura</h2>
         <p>
           Explore as especialidades e descubra profissionais que entendem do seu
           tipo de cabelo.
@@ -145,32 +194,90 @@
       </div>
       <div class="destaques-cards">
         <a href="profissionais.html?servico=trancas" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1741275210031-6637c99135a9?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Tranças"
+              loading="lazy"
+            />
+          </div>
           <h3>Tranças</h3>
         </a>
+
         <a href="profissionais.html?servico=crespo" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1761207054290-6d855fce88b3?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Cabelo crespo"
+              loading="lazy"
+            />
+          </div>
           <h3>Cabelo crespo</h3>
         </a>
+
         <a href="profissionais.html?servico=cacheados" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1598363576971-69666ab1130a?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Cacheados"
+              loading="lazy"
+            />
+          </div>
           <h3>Cacheados</h3>
-          </a>
+        </a>
+
         <a href="profissionais.html?servico=locs" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1646807049792-cdbe0e68dd1c?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Locs"
+              loading="lazy"
+            />
+          </div>
           <h3>Locs</h3>
-          </a>
+        </a>
+
         <a href="profissionais.html?servico=twists" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1792539511452-069d474a5e86?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Twists"
+              loading="lazy"
+            />
+          </div>
           <h3>Twists</h3>
-          </a>
-          </a>
+        </a>
+
         <a href="profissionais.html?servico=transicao" class="destaque-card">
-          <div class="arco"></div>
+          <div class="arco">
+            <img
+              src="https://images.unsplash.com/photo-1678214839727-091992974acc?auto=format&fit=crop&w=400&q=80"
+              alt="Especialidade Transição capilar"
+              loading="lazy"
+            />
+          </div>
           <h3>Transição capilar</h3>
-          </a>
+        </a>
       </div>
     </section>
+
+    <footer class="rodape" id="sobre">
+      <div class="rodape-conteudo">
+        <div class="rodape-logo">
+          <h2>Meu Black</h2>
+          <p>
+            Conectando você aos melhores especialistas em cabelos crespos,
+            cacheados e estilo afro.
+          </p>
+        </div>
+        <div class="rodape-acoes">
+          <a href="#inicio" class="voltar-topo">&uarr; Voltar ao início</a>
+        </div>
+      </div>
+      <div class="rodape-copy">
+        <p>&copy; 2026 Meu Black &bull; Todos os direitos reservados.</p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

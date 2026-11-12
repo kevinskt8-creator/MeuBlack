@@ -20,13 +20,10 @@ botaoFechar.addEventListener("click", fecharMenu);
 overlay.addEventListener("click", fecharMenu);
 
 menuLateral.querySelectorAll("a").forEach((link) => {
-link.addEventListener("click", fecharMenu)
-)};
-
-
+  link.addEventListener("click", fecharMenu);
+});
 
 // fecha ao clicar em um link do menu
 document.addEventListener("keydown", (evento) => {
-    if (evento.key === "Escape") fecharMenu();
-})
-
+  if (evento.key === "Escape") fecharMenu();
+});
