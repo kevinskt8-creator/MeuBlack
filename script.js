@@ -27,3 +27,32 @@ menuLateral.querySelectorAll("a").forEach((link) => {
 document.addEventListener("keydown", (evento) => {
   if (evento.key === "Escape") fecharMenu();
 });
+
+const inputServico = document.getElementById("servico");
+const inputLocal = document.getElementById("localizacao");
+const botaoBuscar = document.querySelector(".btn-buscar");
+
+if (inputServico && inputLocal && botaoBuscar) {
+  function buscar() {
+    const params = new URLSearchParams();
+    const servico = inputServico.value.trim();
+    const local = inputLocal.value.trim();
+
+    if (inputServico.value.trim())
+      params.set("servico", inputServico.value.trim());
+    if (inputLocal.value.trim()) params.set("local", inputLocal.value.trim());
+
+    const query = params.toString();
+    window.location.href = query
+      ? `profissionais.html?${query}`
+      : "profissionais.html"; // profissionais.html?servico=tran%C3%A7as
+  }
+
+  botaoBuscar.addEventListener("click", buscar);
+
+  [inputServico, inputLocal].forEach((input) =>
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") buscar();
+    }),
+  );
+}

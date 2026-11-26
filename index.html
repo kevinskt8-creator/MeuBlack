@@ -39,53 +39,88 @@
     </aside>
 
     <section class="hero" id="inicio">
-      <div class="hero-text">
-        <h2>
-          Encontre quem
-          <span>entende do seu cabelo.</span>
-        </h2>
-        <div class="hero-search">
-          <div class="search-group">
-            <label for="servico" class="sr-only">O que você procura?</label>
-            <input
-              type="text"
-              id="servico"
-              placeholder="Ex: tranças, cortes, barber..."
-            />
-          </div>
+      <div class="hero-container">
+        <!-- Conteúdo de Busca e Mensagem -->
+        <div class="hero-conteudo">
+          <span class="hero-rotulo">A PLATAFORMA DO SEU CABELO</span>
 
-          <div class="divisor"></div>
+          <h2>
+            Encontre quem
+            <span>entende do seu cabelo.</span>
+          </h2>
 
-          <div class="search-group">
-            <label for="localizacao" class="sr-only">Onde?</label>
-            <input
-              type="text"
-              id="localizacao"
-              placeholder="Ex: Brasília, DF"
-            />
+          <p class="hero-descricao">
+            Conectamos você aos melhores especialistas em tranças, cortes afro,
+            crespos, cacheados e transição capilar. Cuidado e respeito com a sua
+            coroa.
+          </p>
+
+          <form class="hero-search" action="profissionais.html" method="GET">
+            <div class="search-group">
+              <label for="servico" class="sr-only">O que você procura?</label>
+              <input
+                type="text"
+                id="servico"
+                name="servico"
+                placeholder="Ex: tranças, cortes, barber..."
+              />
+            </div>
+
+            <div class="divisor"></div>
+
+            <div class="search-group">
+              <label for="localizacao" class="sr-only">Onde?</label>
+              <input
+                type="text"
+                id="localizacao"
+                name="localizacao"
+                placeholder="Ex: Brasília, DF"
+              />
+            </div>
+
+            <button type="submit" class="btn-buscar" aria-label="Buscar">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <line x1="16.5" y1="16.5" x2="21" y2="21" />
+              </svg>
+            </button>
+          </form>
+
+          <div class="hero-tags">
+            <span>Mais buscados:</span>
+            <div class="hero-tags-lista">
+              <a href="profissionais.html?servico=trancas">Tranças</a>
+              <a href="profissionais.html?servico=crespo">Crespo</a>
+              <a href="profissionais.html?servico=cacheados">Cacheados</a>
+              <a href="profissionais.html?servico=locs">Locs</a>
+            </div>
           </div>
-          <button type="button" class="btn-buscar" aria-label="Buscar">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-            >
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="21" y2="21" />
-            </svg>
-          </button>
         </div>
-      </div>
 
-      <div class="hero-image">
-        <img
-          src="img/pexels-rdne-7697230.jpg"
-          alt="Profissional especializado em cabelos crespos"
-        />
+        <!-- Coluna da Foto Editorial -->
+        <div class="hero-imagem-col">
+          <div class="hero-moldura">
+            <img
+              src="img/pexels-rdne-7697230.jpg"
+              alt="Profissional especializado em estética e cabelos afro"
+            />
+            <div class="hero-badge">
+              <span class="badge-icone">&#10022;</span>
+              <div>
+                <strong>+500 Especialistas</strong>
+                <p>Curvaturas 3A a 4C e técnicas afro</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hero-scroll">
@@ -94,7 +129,8 @@
           class="hero-scroll-btn"
           aria-label="Rolar para Como funciona"
         >
-          
+          <span>Conheça a plataforma</span>
+          <div class="scroll-linha"></div>
         </a>
       </div>
     </section>
